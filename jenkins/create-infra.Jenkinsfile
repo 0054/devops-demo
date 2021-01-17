@@ -24,8 +24,8 @@ pipeline {
                     dir("terraform/infra") {
                         sh '''
                            export AWS_DEFAULT_REGION="eu-central-1"
-                           export AWS_ACESS_KEY_ID=${USERNAME}
-                           export AWS_SECRET_ACCESS_KEY=${PASSWORD}
+                           export AWS_ACESS_KEY_ID="${USERNAME}"
+                           export AWS_SECRET_ACCESS_KEY="${PASSWORD}"
                            terraform init
                         '''
                     }
