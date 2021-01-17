@@ -23,7 +23,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     dir("terraform/infra") {
                         sh '''
-                           export AWS_DEFAULT_REGION = "eu-central-1"
+                           export AWS_DEFAULT_REGION="eu-central-1"
                            export AWS_ACESS_KEY_ID=${USERNAME}
                            export AWS_SECRET_ACCESS_KEY=${PASSWORD}
                            terraform init
@@ -37,7 +37,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     dir("terraform/infra") {
                         sh '''
-                            export AWS_DEFAULT_REGION = "eu-central-1"
+                            export AWS_DEFAULT_REGION="eu-central-1"
                             export AWS_ACESS_KEY_ID=${USERNAME}
                             export AWS_SECRET_ACCESS_KEY=${PASSWORD}
                             terraform plan
@@ -51,7 +51,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     dir("terraform/infra") {
                         sh '''
-                            export AWS_DEFAULT_REGION = "eu-central-1"
+                            export AWS_DEFAULT_REGION="eu-central-1"
                             export AWS_ACESS_KEY_ID=${USERNAME}
                             export AWS_SECRET_ACCESS_KEY=${PASSWORD}
                             terraform apply
