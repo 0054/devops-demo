@@ -4,7 +4,7 @@
 
 provider "aws" {}
 # export AWS_ACESS_KEY_ID="acesskeyid"
-# export AWS_SECRET_ACESS_KEY="acesskey"
+# export AWS_SECRET_ACCESS_KEY="acesskey"
 # export AWS_DEFAULT_REGION="us-west-2"
 
 terraform {
