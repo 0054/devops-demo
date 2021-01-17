@@ -6,6 +6,9 @@ pipeline {
     agent {
         label 'master'
     }
+    environment {
+        AWS_DEFAULT_REGION = "eu-central-1"
+    }
     // parameters {}
     stages {
         stage('Clean Work Space') {
