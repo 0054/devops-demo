@@ -22,8 +22,8 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     dir("terraform/infra") {
-                        sh 'export AWS_ACESS_KEY_ID=USERNAME'
-                        sh 'export AWS_SECRET_ACCESS_KEY=PASSWORD'
+                        sh 'export AWS_ACESS_KEY_ID=${USERNAME}'
+                        sh 'export AWS_SECRET_ACCESS_KEY=${PASSWORD}'
                         sh 'terraform init'
                     }
                 }
@@ -33,8 +33,8 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     dir("terraform/infra") {
-                        sh 'export AWS_ACESS_KEY_ID=USERNAME'
-                        sh 'export AWS_SECRET_ACCESS_KEY=PASSWORD'
+                        sh 'export AWS_ACESS_KEY_ID=${USERNAME}'
+                        sh 'export AWS_SECRET_ACCESS_KEY=${PASSWORD}'
                         sh 'terraform plan'
                     }
                 }
@@ -44,8 +44,8 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'aws', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     dir("terraform/infra") {
-                        sh 'export AWS_ACESS_KEY_ID=USERNAME'
-                        sh 'export AWS_SECRET_ACCESS_KEY=PASSWORD'
+                        sh 'export AWS_ACESS_KEY_ID=${USERNAME}'
+                        sh 'export AWS_SECRET_ACCESS_KEY=${PASSWORD}'
                         sh 'terraform apply'
                     }
                 }
