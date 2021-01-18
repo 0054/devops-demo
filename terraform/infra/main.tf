@@ -80,7 +80,7 @@ resource "aws_instance" "ubuntu" {
   vpc_security_group_ids = [data.aws_security_group.allow_ssh.id]
 
   # скрипт который выполняется при разворачивании сервера
-  # user_data = file("./user_data/jenkins_server.sh")
+  user_data = file("./user_data/docker.sh")
 
   tags = {
     Name = each.key
