@@ -67,7 +67,7 @@ resource "aws_key_pair" "aws_key" {
 resource "aws_instance" "ubuntu" {
   # аттачим ami
   ami           = data.aws_ami.ubuntu_ami.id
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   # аттачим ключ
   key_name = aws_key_pair.aws_key.id
   # аттачим сеьюрити группы

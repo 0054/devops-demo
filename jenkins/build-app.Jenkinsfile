@@ -31,7 +31,7 @@ pipeline {
                     dir("terraform/infra") {
 
                         sh '''
-                            sudo docker --username "${USERNAME}" --password "${PASSWORD}"
+                            sudo docker login --username "${USERNAME}" --password "${PASSWORD}"
                             make push
                             '''
                     }
