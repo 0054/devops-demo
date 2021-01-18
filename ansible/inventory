@@ -1,0 +1,7 @@
+[all:vars]
+ansible_connection=ssh
+ansible_user=ubuntu
+
+[web]
+3.64.59.134
+3.126.51.35
