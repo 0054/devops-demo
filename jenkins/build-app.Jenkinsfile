@@ -28,7 +28,7 @@ pipeline {
         stage('push') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    dir("terraform/infra") {
+                    dir("python/app") {
 
                         sh '''
                             sudo docker login --username "${USERNAME}" --password "${PASSWORD}"
