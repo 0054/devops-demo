@@ -75,7 +75,7 @@ resource "aws_instance" "ubuntu" {
   ami           = data.aws_ami.ubuntu_ami.id
   instance_type = each.value["instance_type"]
   # аттачим ключ
-  key_name = "allow_ssh"
+  key_name = "aws_key"
   # аттачим сеьюрити группы
   vpc_security_group_ids = [data.aws_security_group.allow_ssh.id]
 
