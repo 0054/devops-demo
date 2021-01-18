@@ -1,2 +1,4 @@
 **/.terraform/
 **.swp
+**/.venv/
+**/__pycache__/
