@@ -29,7 +29,11 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     dir("terraform/infra") {
-                        sh 'make push'
+
+                        sh '''
+                            sudo docker --username "${USERNAME}" --password "${PASSWORD}"
+                            make push
+                            '''
                     }
                 }
             }
