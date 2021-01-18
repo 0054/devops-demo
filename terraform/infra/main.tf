@@ -57,15 +57,16 @@ data "aws_ami" "ubuntu_ami" {
 #     Name = "allow_ssh"
 #   }
 # }
+
 data "aws_security_group" "allow_ssh" {
   name = "allow_ssh"
 }
 
 
-resource "aws_key_pair" "aws_key" {
-  key_name   = "aws_key"
-  public_key = file("~/.ssh/aws_key.pub")
-}
+# resource "aws_key_pair" "aws_key" {
+#   key_name   = "aws_key"
+#   public_key = file("~/.ssh/aws_key.pub")
+# }
 
 
 resource "aws_instance" "ubuntu" {
@@ -74,7 +75,7 @@ resource "aws_instance" "ubuntu" {
   ami           = data.aws_ami.ubuntu_ami.id
   instance_type = each.value["instance_type"]
   # аттачим ключ
-  key_name = aws_key_pair.aws_key.id
+  key_name = "allow_ssh"
   # аттачим сеьюрити группы
   vpc_security_group_ids = [data.aws_security_group.allow_ssh.id]
 
