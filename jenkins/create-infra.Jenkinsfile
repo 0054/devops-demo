@@ -54,7 +54,7 @@ pipeline {
                             export AWS_DEFAULT_REGION="eu-central-1"
                             export AWS_ACCESS_KEY_ID=${USERNAME}
                             export AWS_SECRET_ACCESS_KEY=${PASSWORD}
-                            terraform apply
+                            terraform apply -auto-approve
                         '''
                     }
                 }
